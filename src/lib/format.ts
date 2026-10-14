@@ -39,3 +39,19 @@ export function readNum(s: string, opts: { min?: number; integer?: boolean } = {
   if (opts.integer && !Number.isInteger(n)) return null
   return n
 }
+
+const compactFmt = new Intl.NumberFormat('ru-RU', { notation: 'compact', maximumFractionDigits: 1 })
+
+/** Компактная запись для осей: 1,2 млн, 3,4 трлн */
+export function fmtCompact(x: number): string {
+  if (!Number.isFinite(x)) return '—'
+  return Math.abs(x) < 10000 ? fmtSmart(x) : compactFmt.format(x)
+}
+
+/** Число с точностью по величине: 0,0123 / 1,23 / 123,4 / 12 345 */
+export function fmtSmart(x: number | null): string {
+  if (x === null || !Number.isFinite(x)) return '—'
+  const a = Math.abs(x)
+  const digits = a === 0 ? 0 : a < 1 ? 4 : a < 100 ? 2 : a < 10000 ? 1 : 0
+  return new Intl.NumberFormat('ru-RU', { maximumFractionDigits: digits }).format(x)
+}

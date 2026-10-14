@@ -31,10 +31,10 @@ export const workspaceTools: WorkspaceTool[] = [
   {
     id: 'data-search',
     title: 'Поиск показателей',
-    description: 'ВВП, инфляция, безработица и тысячи рядов из FRED, World Bank, IMF, OECD и Eurostat.',
+    description: 'ВВП, инфляция, безработица и тысячи рядов из World Bank и FRED. Графики, таблица, экспорт в CSV и XLSX.',
     section: 'Данные',
     icon: 'database',
-    status: 'soon',
+    status: 'ready',
     href: '/tools/data-search',
     keywords: ['fred', 'world bank', 'всемирный банк', 'imf', 'мвф', 'oecd', 'оэср', 'eurostat', 'api', 'ввп', 'инфляция'],
     features: [
@@ -49,7 +49,7 @@ export const workspaceTools: WorkspaceTool[] = [
     description: 'Выберите страны, показатель и период — получите таблицу и график.',
     section: 'Данные',
     icon: 'globe',
-    status: 'soon',
+    status: 'ready',
     href: '/tools/compare',
     keywords: ['страны', 'сравнение', 'панель', 'country'],
     features: ['Выбор нескольких стран и одного показателя', 'Таблица и график за выбранный период', 'Экспорт в CSV и XLSX'],
@@ -60,7 +60,7 @@ export const workspaceTools: WorkspaceTool[] = [
     description: 'Номинал → реал, смена частоты, темпы роста, индексы (база = 100).',
     section: 'Данные',
     icon: 'shuffle',
-    status: 'soon',
+    status: 'ready',
     href: '/tools/transform',
     keywords: ['дефлирование', 'реальный', 'частота', 'квартал', 'темп роста', 'индекс', 'yoy'],
     features: [
